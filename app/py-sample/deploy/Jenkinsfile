@@ -28,8 +28,8 @@ pipeline {
         }
         stage('Build Container Image') {
             steps {
-                sh('docker image rm $ImageRegistry/devsecops:v${BUILD_NUMBER} || echo "No existing image found"')
-                sh('docker build --no-cache -t $ImageRegistry/devsecops:v${BUILD_NUMBER} -f $Dockerfile app/py-sample')
+                sh('docker image rm $ImageRegistry/student05/devsecops:v${BUILD_NUMBER} || echo "No existing image found"')
+                sh('docker build --no-cache -t $ImageRegistry/student05/devsecops:v${BUILD_NUMBER} -f $Dockerfile app/py-sample')
             }
         }
         stage('Trivy - Container security scan') {
